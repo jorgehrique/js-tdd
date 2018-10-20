@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "node node_modules/eslint/bin/eslint.js src/*.js",    
+    "lint-fix": "node node_modules/eslint/bin/eslint.js src/*.js --fix",
+    "prepush": "npm run lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/jorgehrique/js-tdd/issues"
   },
-  "homepage": "https://github.com/jorgehrique/js-tdd#readme"
+  "homepage": "https://github.com/jorgehrique/js-tdd#readme",
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.1.1"
+  }
 }
