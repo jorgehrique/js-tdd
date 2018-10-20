@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "node node_modules/eslint/bin/eslint.js src/*.js",    
-    "lint-fix": "node node_modules/eslint/bin/eslint.js src/*.js --fix",
-    "prepush": "npm run lint",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "lint-fix": "./node_modules/.bin/eslint src/*.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,5 +27,10 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   }
 }
