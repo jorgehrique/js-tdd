@@ -28,13 +28,17 @@ describe('Main', () => {
     })
 
     it('should return ´FizzBuzz´ when multiple of 5 and 3', () => {
-      expect(fizzbuzz(15)).to.be.equal('FizzBuzz')      
+      expect(fizzbuzz(15)).to.be.equal('FizzBuzz')
       expect(fizzbuzz(30)).to.be.equal('FizzBuzz')
     })
 
     it('should return ´{n}´ when NOT multiple of 5 and 3', () => {
-      expect(fizzbuzz(11)).to.be.equal(11)      
+      expect(fizzbuzz(11)).to.be.equal(11)
       expect(fizzbuzz(13)).to.be.equal(13)
+    })
+
+    it('should return 0 when 0', () => {
+      expect(fizzbuzz(0)).to.be.equal(0)
     })
   })
 })
