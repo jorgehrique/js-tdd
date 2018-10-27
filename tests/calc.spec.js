@@ -1,76 +1,72 @@
-var expect = require('chai').expect;
-var calc = require('../src/calc');
+import { expect } from 'chai'
+import { sum, sub, mult, div } from '../src/calc'
 
-describe('Calc', function () {
+describe('Calc', () => {
 
-    describe('smoke tests', function () {
+    describe('smoke tests', () => {
 
-        it('should exist calc module', function () {
-            expect(calc).to.exist;
+        it('should exist a method ´sum´', () => {
+            expect(sum).to.exist.and.to.be.a('function');
         })
 
-        it('should exist a method ´sum´', function () {
-            expect(calc.sum).to.exist.and.to.be.a('function');
+        it('should exist a method ´sub´', () => {
+            expect(sub).to.exist.and.to.be.a('function');
         })
 
-        it('should exist a method ´sub´', function () {
-            expect(calc.sub).to.exist.and.to.be.a('function');
+        it('should exist a method ´mult´', () => {
+            expect(mult).to.exist.and.to.be.a('function');
         })
 
-        it('should exist a method ´mult´', function () {
-            expect(calc.mult).to.exist.and.to.be.a('function');
-        })
-
-        it('should exist a method ´div´', function () {
-            expect(calc.div).to.exist.and.to.be.a('function');
+        it('should exist a method ´div´', () => {
+            expect(div).to.exist.and.to.be.a('function');
         })
     })
 
-    describe('sum', function () {
-        it('should return a number', function () {
-            expect(calc.sum()).to.be.a('number');
+    describe('sum', () => {
+        it('should return a number', () => {
+            expect(sum()).to.be.a('number');
         })
 
-        it('should return 4 when ´sum(2, 2)´', function () {
-            expect(calc.sum(2, 2)).to.be.equal(4);
+        it('should return 4 when ´sum(2, 2)´', () => {
+            expect(sum(2, 2)).to.be.equal(4);
         })
 
-        it('should return 10 when ´sum(4, 6)´', function () {
-            expect(calc.sum(4, 6)).to.be.equal(10);
-        })
-    })
-
-    describe('sub', function () {
-        it('should return a number', function () {
-            expect(calc.sub()).to.be.a('number');
-        })
-
-        it('should return 4 when ´sub(10, 6)´', function () {
-            expect(calc.sub(10, 6)).to.be.equal(4);
+        it('should return 10 when ´sum(4, 6)´', () => {
+            expect(sum(4, 6)).to.be.equal(10);
         })
     })
 
-    describe('mult', function () {
-        it('should return a number', function () {
-            expect(calc.mult()).to.be.a('number');
+    describe('sub', () => {
+        it('should return a number', () => {
+            expect(sub()).to.be.a('number');
         })
 
-        it('should return 4 when ´mult(2, 2)´', function () {
-            expect(calc.mult(2, 2)).to.be.equal(4);
+        it('should return 4 when ´sub(10, 6)´', () => {
+            expect(sub(10, 6)).to.be.equal(4);
         })
     })
 
-    describe('div', function () {
-        it('should return a number', function () {
-            expect(calc.div()).to.be.a('number');
+    describe('mult', () => {
+        it('should return a number', () => {
+            expect(mult()).to.be.a('number');
         })
 
-        it('should return 4 when ´div(8, 2)´', function () {
-            expect(calc.div(8, 2)).to.be.equal(4);
+        it('should return 4 when ´mult(2, 2)´', () => {
+            expect(mult(2, 2)).to.be.equal(4);
+        })
+    })
+
+    describe('div', () => {
+        it('should return a number', () => {
+            expect(div()).to.be.a('number');
         })
 
-        it('should return ´Não é possível dividir por zero!´ when divied by zero', function () {
-            expect(calc.div(4, 0)).to.be.equal('Não é possível dividir por zero!');
+        it('should return 4 when ´div(8, 2)´', () => {
+            expect(div(8, 2)).to.be.equal(4);
+        })
+
+        it('should return ´Não é possível dividir por zero!´ when divied by zero', () => {
+            expect(div(4, 0)).to.be.equal('Não é possível dividir por zero!');
         })
     })
 })
